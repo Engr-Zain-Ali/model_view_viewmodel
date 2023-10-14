@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:model_view_viewmodel/view_d/home_screen.dart';
+
+import '../utils/utils.dart';
 class Login_Screen extends StatefulWidget {
   const Login_Screen({super.key});
 
@@ -11,13 +13,15 @@ class _Login_ScreenState extends State<Login_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Screen()));
+      body:Center(
+        child: InkWell(
+          onTap: (){
+            Utils.snackBar("no internet connection",context);
+            //Utils.toastMessage('click me');
+          },
 
-        },
-
-          child: Center(child: Text("click")))
+            child: Center(child: Text("click"))),
+      ),
 
     );
   }
